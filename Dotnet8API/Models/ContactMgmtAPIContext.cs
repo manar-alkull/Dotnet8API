@@ -26,21 +26,9 @@ public partial class ContactMgmtAPIContext : DbContext
             entity.Property(e => e.Id)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("ID");
-            entity.Property(e => e.EmailAddress)
-                .HasMaxLength(10)
-                .IsFixedLength()
-                .HasColumnName("EmailADdress");
-            entity.Property(e => e.FierstName)
-                .IsRequired()
-                .HasMaxLength(10)
-                .IsFixedLength();
-            entity.Property(e => e.LastName)
-                .IsRequired()
-                .HasMaxLength(10)
-                .IsFixedLength();
-            entity.Property(e => e.PhoneNumber)
-                .HasMaxLength(10)
-                .IsFixedLength();
+            entity.Property(e => e.EmailAddress).HasColumnName("EmailADdress");
+            entity.Property(e => e.FierstName).IsRequired();
+            entity.Property(e => e.LastName).IsRequired();
         });
 
         OnModelCreatingPartial(modelBuilder);
