@@ -2,17 +2,20 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dotnet8API.Models;
 
 public partial class Contact
 {
+    [Required]
     public Guid Id { get; set; }
-
+    [Required]
     public string FierstName { get; set; }
-
+    [Required]
     public string LastName { get; set; }
 
+    [EmailAddress(ErrorMessage = "The email address is not valid")]
     public string EmailAddress { get; set; }
 
     public string PhoneNumber { get; set; }

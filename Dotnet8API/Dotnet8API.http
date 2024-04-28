@@ -20,9 +20,23 @@ Accept: application/json
 Content-Type: application/json
 
   {
-    "fierstName": "manar4",
+    "fierstName": "manar val",
     "lastName": "alkull",
-    "emailAddress": "e",
+    "emailAddress": "manar02@windowslive.com",
+    "phoneNumber": "x"
+  }
+
+###
+
+# invalide
+POST {{Dotnet8API_HostAddress}}/api/{{Contacts}}
+Accept: application/json
+Content-Type: application/json
+
+  {
+    "fierstName": "manar val",
+    "lastName": "alkull",
+    "emailAddress": "manar02",
     "phoneNumber": "x"
   }
 
