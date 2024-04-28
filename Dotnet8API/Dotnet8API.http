@@ -1,11 +1,46 @@
 @Dotnet8API_HostAddress = https://localhost:7263
-@Contacts = "Contacts"
+@Contacts = Contacts
 GET {{Dotnet8API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
 
-GET https://localhost:7263/api/Contacts
+GET {{Dotnet8API_HostAddress}}/api/{{Contacts}}
+
+###
+
+GET {{Dotnet8API_HostAddress}}/api/{{Contacts}}/57dd1db3-fad8-4e20-b90e-dcb7b12f3018
 Accept: application/json
+
+###
+
+
+POST {{Dotnet8API_HostAddress}}/api/{{Contacts}}
+Accept: application/json
+Content-Type: application/json
+
+  {
+    "fierstName": "manar4",
+    "lastName": "alkull",
+    "emailAddress": "e",
+    "phoneNumber": "x"
+  }
+
+###
+PUT {{Dotnet8API_HostAddress}}/api/{{Contacts}}/57dd1db3-fad8-4e20-b90e-dcb7b12f3018
+Accept: application/json
+Content-Type: application/json
+
+  {
+    "id": "57dd1db3-fad8-4e20-b90e-dcb7b12f3018",
+    "fierstName": "manar edit 4",
+    "lastName": "alkull",
+    "emailAddress": "e",
+    "phoneNumber": "x"
+  }
+
+###
+
+DELETE {{Dotnet8API_HostAddress}}/api/{{Contacts}}/839eafd1-8a37-447f-ad6f-086a7ff3624f
 
 ###
