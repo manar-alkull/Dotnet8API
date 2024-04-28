@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Dotnet8API.Models;
 
-public partial class Table
+public partial class Contact
 {
     public Guid Id { get; set; }
 

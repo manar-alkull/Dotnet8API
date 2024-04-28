@@ -1,6 +1,20 @@
+using Dotnet8API.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+//--------------------------------------------------------------------------------------------------------
+//https://dotnettutorials.net/lesson/asp-net-core-identity-setup/
+var connectionString = builder.Configuration.GetConnectionString("connectionString1") ?? throw new InvalidOperationException("Connection string 'connectionString1' not found.");
+builder.Services.AddDbContext<ContactMgmtAPIContext>(options =>
+    options.UseSqlServer(connectionString));
+//builder.Services.AddDbContext<ContactMgmtAPIContext>(option => option.UseSqlServer("Server=(localdb)\\ProjectModels\\SQLExpress;Database=ContactMgmtAPI;Trusted_Connection=True;"));
+
+//--------------------------------------------------------------------------------------------------------
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

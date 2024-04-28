@@ -13,15 +13,15 @@ public partial class ContactMgmtAPIContext : DbContext
     {
     }
 
-    public virtual DbSet<Table> Tables { get; set; }
+    public virtual DbSet<Contact> Contacts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Table>(entity =>
+        modelBuilder.Entity<Contact>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Table__3214EC2778441CAB");
 
-            entity.ToTable("Table");
+            entity.ToTable("Contact");
 
             entity.Property(e => e.Id)
                 .HasDefaultValueSql("(newid())")
